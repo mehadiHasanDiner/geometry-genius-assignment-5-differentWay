@@ -23,9 +23,9 @@
         </div>
     </header>
     <main>
-        <section>
-            <div class="px-16 mt-8">
-                <div class="card w-96 bg-base-300 shadow-xl">
+        <section class="px-16 flex flex-col md:flex-row">
+            <div class=" mt-8 lg:w-[70%] grid lg:grid-cols-3 md:grid-cols-1 gap-4 px-2">
+                <div class="card w-full bg-base-300 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/triangle.png" />
                     </figure>
@@ -41,11 +41,12 @@
                                 class="px-2 text-xl">cm</span>
                         </div>
                         <div class="card-actions">
-                            <button class="btn btn-outline btn-accent px-[125px]">Calculate</button>
+                            <button
+                                class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
                 </div>
-                <div class="card w-96 bg-base-300 shadow-xl">
+                <div class="card w-full bg-base-300 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/rectangle.png" />
                     </figure>
@@ -61,11 +62,12 @@
                                 class="px-2 text-xl">cm</span>
                         </div>
                         <div class="card-actions">
-                            <button class="btn btn-outline btn-accent px-[125px]">Calculate</button>
+                            <button
+                                class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
                 </div>
-                <div class="card w-96 bg-base-300 shadow-xl">
+                <div class="card w-full bg-base-300 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/parallelogram.png" />
                     </figure>
@@ -75,11 +77,12 @@
                         <p>b = 10cm, h = 12cm</p>
 
                         <div class="card-actions">
-                            <button class="btn btn-outline btn-accent px-[125px]">Calculate</button>
+                            <button
+                                class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
                 </div>
-                <div class="card w-96 bg-base-300 shadow-xl">
+                <div class="card w-full bg-base-300 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/rhombus.png" />
                     </figure>
@@ -89,11 +92,12 @@
                         <p>d<sub>1</sub> = 10cm, d<sub>2</sub> = 12cm</p>
 
                         <div class="card-actions">
-                            <button class="btn btn-outline btn-accent px-[125px]">Calculate</button>
+                            <button
+                                class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
                 </div>
-                <div class="card w-96 bg-base-300 shadow-xl">
+                <div class="card w-full bg-base-300 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/pentagon.png" />
                     </figure>
@@ -103,11 +107,12 @@
                         <p>p = 6cm, b = 10cm</p>
 
                         <div class="card-actions">
-                            <button class="btn btn-outline btn-accent px-[125px]">Calculate</button>
+                            <button
+                                class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
                 </div>
-                <div class="card w-96 bg-base-300 shadow-xl">
+                <div class="card w-full bg-base-300 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/ellipse.png" />
                     </figure>
@@ -117,12 +122,54 @@
                         <p>p = 10cm, b = 4cm</p>
 
                         <div class="card-actions">
-                            <button class="btn btn-outline btn-accent px-[125px]">Calculate</button>
+                            <button
+                                class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div></div>
+            <div class="mt-8 lg:w-[29%] ml-2 px-2 bg-blue-400">
+                <div class="">
+                    <h3 class="text-center text-2xl  py-4 font-bold text-blue-900">Calculation, Total added = <span
+                            class="text-violet-600">0</span> </h3>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead class="bg-white border-b">
+                                <tr>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        #
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        First
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        Last
+                                    </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                        Handle
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr class="bg-gray-100 border-b">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        Mark
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        Otto
+                                    </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                        @mdo
+                                    </td>
+                                </tr> -->
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 </body>
