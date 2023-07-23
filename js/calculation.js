@@ -20,14 +20,22 @@ document.getElementById("first-card").addEventListener("click", function (e) {
 // set the total
 function setTotal(shapeName, shapeTotal) {
   serial++;
+  const td = document.createElement("td");
   const newButton = document.createElement("button");
-  const btnDesign = newButton.classList.add("btn");
-  btnDesign.innerText = "Convert";
-  const tr = document.getElementById("table-container");
+  const btnDesign = newButton.classList.add("btn", "btn-primary");
+  newButton.innerText = "convert";
+  //   const tdData = td.appendChild(btnDesign);
+  //   console.log(tdData);
+
+  //   btnDesign.innerText = "Convert";
+  console.log(newButton.innerText);
+  const container = document.getElementById("table-container");
+  const tr = document.createElement("tr");
   tr.innerHTML = `
-  <tb>${serial}</tb>
-  <tb>${shapeName}</tb>
-  <tb>${shapeTotal}</tb>
-  <tb>${btnDesign}</tb>
+  <td>${serial}</td>
+  <td>${shapeName}</td>
+  <td>${shapeTotal}</td>
+  <td>${btnDesign}</td>
   `;
+  container.appendChild(tr);
 }
