@@ -36,6 +36,7 @@ document.getElementById("first-card").addEventListener("click", function (e) {
   areaField2.innerText = inputField1Number2;
 
   const totalArea = 0.5 * inputField1Number1 * inputField1Number2;
+  const totalAreaString = totalArea.toString() + "cm";
 
   // create button dynamically (important)
   const convertBtn = document.createElement("button");
@@ -45,7 +46,7 @@ document.getElementById("first-card").addEventListener("click", function (e) {
   const convertBtn1 = convertBtn;
   // console.log(convertBtn1);
 
-  setTotal(areaFieldText, totalArea, convertBtn1);
+  setTotal(areaFieldText, totalAreaString, convertBtn1);
 });
 
 // Card No:2
@@ -83,6 +84,7 @@ document.getElementById("second-card").addEventListener("click", function (e) {
   areaField2.innerText = inputField1Number2;
 
   const totalArea = inputField1Number1 * inputField1Number2;
+  const totalAreaString = totalArea.toString() + "cm";
 
   // create button dynamically (important)
   const convertBtn = document.createElement("button");
@@ -92,7 +94,7 @@ document.getElementById("second-card").addEventListener("click", function (e) {
   const convertBtn1 = convertBtn;
   // console.log(convertBtn1);
 
-  setTotal(areaFieldText, totalArea, convertBtn1);
+  setTotal(areaFieldText, totalAreaString, convertBtn1);
 });
 
 // set the total
@@ -103,24 +105,15 @@ function setTotal(shapeName, shapeTotal, convertBtn) {
   tr.innerHTML = `
   <td>${serial}</td>
   <td>${shapeName}</td>
-  <td><span id="convert">${shapeTotal}</span>cm<sup>2</sup></td>
+  <td>${shapeTotal}<sup>2</sup></td>
   `;
   tr.appendChild(convertBtn);
   container.appendChild(tr);
 
-  // const clickConvertBtn = container.appendChild(tr);
-  convertBtn.addEventListener("click", function () {
-    const convertToMeter = shapeTotal * 100;
-    // console.log(convertToMeter);
-    console.log(shapeTotal.toString() + "m");
+  // convert button for converting cm to m
+  convertBtn.addEventListener("click", function (e) {
+    const convertToMeter = parseInt(shapeTotal) * 100;
+    const areaTarget = e.target.parentNode.children[2];
+    areaTarget.innerHTML = convertToMeter + "m" + "<sup>2</sup>";
   });
-
-  // const tableConvertBtn = document.getElementById();
-  // document
-  //   .getElementById("convert-btn-1")
-  //   .addEventListener("click", function () {
-  //     const conBtn = document.getElementById("convert").innerText;
-  //     totalAreaCon = parseFloat(conBtn) / 10;
-  //     console.log(totalAreaCon);
-  //   });
 }
