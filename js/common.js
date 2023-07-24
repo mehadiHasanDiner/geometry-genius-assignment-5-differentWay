@@ -4,7 +4,7 @@ function visibleElement() {
   for (let i = 0; i < visibleElements.length; i++) {
     const windowHeight = window.innerHeight;
     const visibleElementsTop = visibleElements[i].getBoundingClientRect().top;
-    const visiblePoint = 96;
+    const visiblePoint = 100;
 
     if (visibleElementsTop < windowHeight - visiblePoint) {
       visibleElements[i].classList.add("active");
