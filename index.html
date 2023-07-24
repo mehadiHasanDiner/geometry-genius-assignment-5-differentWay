@@ -23,16 +23,18 @@
             </div>
         </div>
     </header>
-    <div class="w-full px-16 mt-8 ">
-        <div class="bg-base-300 rounded-xl">
-            <h1 class="text-5xl text-accent text-center py-[10%]"><a
-                    class="btn btn-ghost normal-case text-2xl">Geometric Shape Calculation</a></h1>
+    <div class=" visible w-full px-16 mt-8">
+        <div class="bg-base-300 rounded-xl h-[800px]">
+            <h1 class="text-5xl text-accent text-center py-[15%]">Geometric Shape Calculation</h1>
+            <h1 class="text-5xl text-accent text-center"><a href="#calulationField"
+                    class="btn btn-ghost normal-case text-2xl">Calculate the areas of the shapes bellow</a></h1>
+
         </div>
     </div>
     <main>
 
-        <section class="px-16 flex flex-col md:flex-row">
-            <div class=" mt-8 lg:w-[70%] grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-4 pr-2">
+        <section id="calulationField" class="visible px-16 flex flex-col md:flex-row">
+            <div class=" mt-32 lg:w-[70%] grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-4 pr-2">
                 <div class="card w-full bg-base-300 shadow-xl">
                     <figure class="px-10 pt-10">
                         <img src="images/triangle.png" />
@@ -80,12 +82,12 @@
                         <img src="images/parallelogram.png" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Rectangle</h2>
-                        <p>Area (A) = b &#xd7 h</p>
-                        <p>b = 10cm, h = 12cm</p>
+                        <h2 id="parallelogram" class="card-title">Parallelogram</h2>
+                        <p>Area (A) = <span id="base-amount-pg"></span> &#xd7 <span id="height-amount-pg">h</span></p>
+                        <p>b = <span id="base-input-pg">15</span>cm, h = <span id="height-input-pg">9.15</span>cm</p>
 
                         <div class="card-actions">
-                            <button
+                            <button id="btn-parallelogram"
                                 class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
@@ -95,12 +97,14 @@
                         <img src="images/rhombus.png" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Rhombus</h2>
-                        <p>Area (A) = 0.5 &#xd7 d<sub>1</sub> &#xd7 d<sub>1</sub></p>
-                        <p>d<sub>1</sub> = 10cm, d<sub>2</sub> = 12cm</p>
+                        <h2 id="rhombus" class="card-title">Rhombus</h2>
+                        <p>Area (A) = 0.5 &#xd7 <span id="diagonal-1-amount">d</span><sub>1</sub> &#xd7 <span
+                                id="diagonal-2-amount">d</span><sub>1</sub></p>
+                        <p>d<sub>1</sub> = <span id="diagonal-1">11.5</span>cm, d<sub>2</sub> = <span
+                                id="diagonal-2">9.5</span>m</p>
 
                         <div class="card-actions">
-                            <button
+                            <button id="btn-rhombus"
                                 class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
@@ -110,12 +114,13 @@
                         <img src="images/pentagon.png" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Pentagon</h2>
-                        <p>Area (A) = 0.5 &#xd7 p &#xd7 b</p>
-                        <p>p = 6cm, b = 10cm</p>
+                        <h2 id="pentagon" class="card-title">Pentagon</h2>
+                        <p>Area (A) = 0.5 &#xd7 <span id="area-1-amount">p</span> &#xd7 <span id="area-2-amount"></span>
+                        </p>
+                        <p>p = <span id="area-1">6</span>cm, b = <span id="area-2">10</span>cm</p>
 
                         <div class="card-actions">
-                            <button
+                            <button id="btn-pentagon"
                                 class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
@@ -125,18 +130,18 @@
                         <img src="images/ellipse.png" />
                     </figure>
                     <div class="card-body items-center text-center">
-                        <h2 class="card-title">Ellipse</h2>
-                        <p>Area (A) = &#960.a.b</p>
-                        <p>p = 10cm, b = 4cm</p>
+                        <h2 id="ellipse" class="card-title">Ellipse</h2>
+                        <p>Area (A) = &#960.<span id="axis-1-amount">a</span>.<span id="axis-2-amount">b</span></p>
+                        <p>p = <span id="axis-1">10</span>cm, b = <span id="axis-2">4</span>cm</p>
 
                         <div class="card-actions">
-                            <button
+                            <button id="btn-ellipse"
                                 class="btn btn-outline btn-accent px-[75px] lg:px-[50px]  md:px-[100px]">Calculate</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 lg:w-[30%] ml-2">
+            <div class="mt-32 lg:w-[30%] ml-2">
                 <div class="bg-blue-400 h-full px-2 rounded-xl">
                     <h3 class="text-center text-2xl  pt-4 pb-2 font-bold text-blue-900 underline">Calculation Field</h3>
                     <div>
@@ -169,7 +174,7 @@
             </div>
         </section>
         <!-- <img class="w-full px-16 mt-8" src="images/Banner.jpg" alt=""> -->
-        <div class="w-full px-16 mt-8">
+        <div class="visible w-full px-16 mt-8">
             <div class="bg-base-300 rounded-xl">
                 <h1 class="text-3xl text-accent text-center py-[10%]">Footer Part</h1>
             </div>
@@ -217,7 +222,9 @@
         </div>
     </footer>
 
+    <script src="js/common.js"></script>
     <script src="js/calculation.js"></script>
+
 </body>
 
 </html>

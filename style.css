@@ -1,0 +1,11 @@
+.visible{
+    position: relative;
+    transform: translateY(96px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.visible.active{
+    transform: translateY(0px);
+    opacity: 1;
+}

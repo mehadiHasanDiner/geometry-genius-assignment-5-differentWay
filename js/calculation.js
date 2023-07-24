@@ -1,7 +1,7 @@
 // get the data (using event.target (parent & child))
 let serial = 0;
 
-// Card No:1
+// Card No:1-Triangle Card
 document.getElementById("first-card").addEventListener("click", function (e) {
   const inputField1 =
     e.target.parentNode.parentNode.children[2].children[0].value;
@@ -38,18 +38,11 @@ document.getElementById("first-card").addEventListener("click", function (e) {
   const totalArea = 0.5 * inputField1Number1 * inputField1Number2;
   const totalAreaString = totalArea.toString() + "cm";
 
-  // create button dynamically (important)
-  const convertBtn = document.createElement("button");
-  convertBtn.classList.add("btn", "btn-accent");
-  convertBtn.id = "convert-btn-1";
-  convertBtn.innerText = "Convert";
-  const convertBtn1 = convertBtn;
-  // console.log(convertBtn1);
-
-  setTotal(areaFieldText, totalAreaString, convertBtn1);
+  const areaConvertBtn = createAButtonElement();
+  setTotal(areaFieldText, totalAreaString, areaConvertBtn);
 });
 
-// Card No:2
+// Card No:2-Rectangle
 document.getElementById("second-card").addEventListener("click", function (e) {
   const inputField1 =
     e.target.parentNode.parentNode.children[2].children[0].value;
@@ -73,7 +66,6 @@ document.getElementById("second-card").addEventListener("click", function (e) {
       "Please enter a valid number. Don't enter alphanumeric characters"
     );
   }
-  // Reset the input field
   e.target.parentNode.parentNode.children[2].children[0].value = 0;
   e.target.parentNode.parentNode.children[2].children[2].value = 0;
 
@@ -85,35 +77,70 @@ document.getElementById("second-card").addEventListener("click", function (e) {
 
   const totalArea = inputField1Number1 * inputField1Number2;
   const totalAreaString = totalArea.toString() + "cm";
-
-  // create button dynamically (important)
-  const convertBtn = document.createElement("button");
-  convertBtn.classList.add("btn", "btn-accent");
-  convertBtn.id = "convert-btn-1";
-  convertBtn.innerText = "Convert";
-  const convertBtn1 = convertBtn;
-  // console.log(convertBtn1);
-
-  setTotal(areaFieldText, totalAreaString, convertBtn1);
+  const areaConvertBtn = createAButtonElement();
+  setTotal(areaFieldText, totalAreaString, areaConvertBtn);
 });
 
-// set the total
-function setTotal(shapeName, shapeTotal, convertBtn) {
-  serial++;
-  const container = document.getElementById("table-container");
-  const tr = document.createElement("tr");
-  tr.innerHTML = `
-  <td>${serial}</td>
-  <td>${shapeName}</td>
-  <td>${shapeTotal}<sup>2</sup></td>
-  `;
-  tr.appendChild(convertBtn);
-  container.appendChild(tr);
+// Card:3-Parallelogram area calculation
+const parallelogramCard = document.getElementById("btn-parallelogram");
+parallelogramCard.addEventListener("click", function () {
+  const baseAmount = getValueAndSetCalculatedArea(
+    "base-input-pg",
+    "base-amount-pg"
+  );
+  const heightAmount = getValueAndSetCalculatedArea(
+    "height-input-pg",
+    "height-amount-pg"
+  );
+  const parallelogramArea = document.getElementById("parallelogram").innerText;
+  const totalArea = baseAmount * heightAmount;
+  const totalAreaString = totalArea.toFixed(2).toString() + "cm";
+  const areaConvertBtn = createAButtonElement();
+  setTotal(parallelogramArea, totalAreaString, areaConvertBtn);
+  parallelogramCard.setAttribute("disabled", true);
+});
 
-  // convert button for converting cm to m
-  convertBtn.addEventListener("click", function (e) {
-    const convertToMeter = parseInt(shapeTotal) * 100;
-    const areaTarget = e.target.parentNode.children[2];
-    areaTarget.innerHTML = convertToMeter + "m" + "<sup>2</sup>";
-  });
-}
+// Card:4-Rhombus area calculation
+const rhombusCard = document.getElementById("btn-rhombus");
+rhombusCard.addEventListener("click", function () {
+  const baseAmount = getValueAndSetCalculatedArea(
+    "diagonal-1",
+    "diagonal-1-amount"
+  );
+  const heightAmount = getValueAndSetCalculatedArea(
+    "diagonal-2",
+    "diagonal-2-amount"
+  );
+  const rhombusArea = document.getElementById("rhombus").innerText;
+  const totalArea = 0.5 * baseAmount * heightAmount;
+  const totalAreaString = totalArea.toFixed(2).toString() + "cm";
+  const areaConvertBtn = createAButtonElement();
+  setTotal(rhombusArea, totalAreaString, areaConvertBtn);
+  rhombusCard.setAttribute("disabled", true);
+});
+
+// Card:5-Pentagon area calculation
+const pentagonCard = document.getElementById("btn-pentagon");
+pentagonCard.addEventListener("click", function () {
+  const baseAmount = getValueAndSetCalculatedArea("area-1", "area-1-amount");
+  const heightAmount = getValueAndSetCalculatedArea("area-1", "area-2-amount");
+  const pentagonArea = document.getElementById("pentagon").innerText;
+  const totalArea = 0.5 * baseAmount * heightAmount;
+  const totalAreaString = totalArea.toFixed(2).toString() + "cm";
+  const areaConvertBtn = createAButtonElement();
+  setTotal(pentagonArea, totalAreaString, areaConvertBtn);
+  pentagonCard.setAttribute("disabled", true);
+});
+
+// Card:6-Ellipse area calculation
+const ellipseCard = document.getElementById("btn-ellipse");
+ellipseCard.addEventListener("click", function () {
+  const baseAmount = getValueAndSetCalculatedArea("axis-1", "axis-1-amount");
+  const heightAmount = getValueAndSetCalculatedArea("axis-1", "axis-2-amount");
+  const ellipseArea = document.getElementById("ellipse").innerText;
+  const totalArea = 3.1416 * baseAmount * heightAmount;
+  const totalAreaString = totalArea.toFixed(2).toString() + "cm";
+  const areaConvertBtn = createAButtonElement();
+  setTotal(ellipseArea, totalAreaString, areaConvertBtn);
+  ellipseCard.setAttribute("disabled", true);
+});
