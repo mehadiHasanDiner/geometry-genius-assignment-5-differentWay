@@ -108,12 +108,19 @@ function setTotal(shapeName, shapeTotal, convertBtn) {
   tr.appendChild(convertBtn);
   container.appendChild(tr);
 
+  // const clickConvertBtn = container.appendChild(tr);
+  convertBtn.addEventListener("click", function () {
+    const convertToMeter = shapeTotal * 100;
+    // console.log(convertToMeter);
+    console.log(shapeTotal.toString() + "m");
+  });
+
   // const tableConvertBtn = document.getElementById();
-  document
-    .getElementById("convert-btn-1")
-    .addEventListener("click", function () {
-      const conBtn = document.getElementById("convert").innerText;
-      totalAreaCon = parseFloat(conBtn) / 10;
-      console.log(totalAreaCon);
-    });
+  // document
+  //   .getElementById("convert-btn-1")
+  //   .addEventListener("click", function () {
+  //     const conBtn = document.getElementById("convert").innerText;
+  //     totalAreaCon = parseFloat(conBtn) / 10;
+  //     console.log(totalAreaCon);
+  //   });
 }
