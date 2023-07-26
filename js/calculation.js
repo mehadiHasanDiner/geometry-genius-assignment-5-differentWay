@@ -35,7 +35,7 @@ document.getElementById("first-card").addEventListener("click", function (e) {
   areaField1.innerText = inputField1Number1;
   areaField2.innerText = inputField1Number2;
 
-  const totalArea = 0.5 * inputField1Number1 * inputField1Number2;
+  const totalArea = (0.5 * inputField1Number1 * inputField1Number2).toFixed(2);
   const totalAreaString = totalArea.toString() + "cm";
 
   const areaConvertBtn = createAButtonElement();
@@ -75,7 +75,7 @@ document.getElementById("second-card").addEventListener("click", function (e) {
   areaField1.innerText = inputField1Number1;
   areaField2.innerText = inputField1Number2;
 
-  const totalArea = inputField1Number1 * inputField1Number2;
+  const totalArea = (inputField1Number1 * inputField1Number2).toFixed(2);
   const totalAreaString = totalArea.toString() + "cm";
   const areaConvertBtn = createAButtonElement();
   setTotal(areaFieldText, totalAreaString, areaConvertBtn);
@@ -123,7 +123,7 @@ rhombusCard.addEventListener("click", function () {
 const pentagonCard = document.getElementById("btn-pentagon");
 pentagonCard.addEventListener("click", function () {
   const baseAmount = getValueAndSetCalculatedArea("area-1", "area-1-amount");
-  const heightAmount = getValueAndSetCalculatedArea("area-1", "area-2-amount");
+  const heightAmount = getValueAndSetCalculatedArea("area-2", "area-2-amount");
   const pentagonArea = document.getElementById("pentagon").innerText;
   const totalArea = 0.5 * baseAmount * heightAmount;
   const totalAreaString = totalArea.toFixed(2).toString() + "cm";
@@ -136,7 +136,7 @@ pentagonCard.addEventListener("click", function () {
 const ellipseCard = document.getElementById("btn-ellipse");
 ellipseCard.addEventListener("click", function () {
   const baseAmount = getValueAndSetCalculatedArea("axis-1", "axis-1-amount");
-  const heightAmount = getValueAndSetCalculatedArea("axis-1", "axis-2-amount");
+  const heightAmount = getValueAndSetCalculatedArea("axis-2", "axis-2-amount");
   const ellipseArea = document.getElementById("ellipse").innerText;
   const totalArea = 3.1416 * baseAmount * heightAmount;
   const totalAreaString = totalArea.toFixed(2).toString() + "cm";
